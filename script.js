@@ -997,6 +997,8 @@ let jobsDataThree = [
 
 let bodyJobs = document.getElementById("body-jobs");
 
+let bodyIndex = document.getElementById("body-index");
+
 let para = document.createElement("p");
 
 para.innerHTML = "hello there";
@@ -1222,4 +1224,8 @@ divThree.innerHTML = "";
 dropDownPlaceholder.innerHTML = "Select another job";
 dropDown.value = dropDownPlaceholder.innerHTML;
 }
+
+let testPara = document.createElement("p");
+testPara.innerHTML = "another one";
+bodyJobs.appendChild(testPara);
 
