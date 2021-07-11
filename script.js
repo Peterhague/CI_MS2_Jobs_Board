@@ -994,19 +994,20 @@ let jobsDataThree = [
         "project accountant": "revenue recognition"
     }
 ]
-/*
+let ok = document.getElementById("ok");
+ok.innerHTML = "ok then";
+
 let testDiv = document.createElement("div");
-testDiv.innerHTML = "test div";*/
+testDiv.innerHTML = "test div";
 let bodyJobs = document.getElementById("body-jobs");
 bodyJobs.appendChild(testDiv);
 
 
-let ok = document.getElementById("ok");
-ok.style.color = "blue";
-ok.innerHTML = "successfully changed";
 let testground = document.createElement("div");
 testground.innerHTML = "here we go";
 bodyJobs.appendChild(testground);
+
+
 
 let jobs = Object.keys(jobsDataOne[0]);
 jobs.sort();
