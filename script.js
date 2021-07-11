@@ -994,6 +994,16 @@ let jobsDataThree = [
         "project accountant": "revenue recognition"
     }
 ]
+/*
+let testDiv = document.createElement("div");
+testDiv.innerHTML = "test div";
+let bodyJobs = document.getElementById("body-jobs");
+bodyJobs.appendChild(testDiv);
+*/
+
+let ok = document.getElementById("ok");
+ok.style.color = "blue";
+ok.innerHTML = "successfully changed";
 
 let jobs = Object.keys(jobsDataOne[0]);
 jobs.sort();
@@ -1169,6 +1179,8 @@ boxItem.addEventListener("click", boxSelected);
 let selection = "";
 
 let divCV = document.getElementById("div-cv");
+
+divCV.innerHTML = "this is a div";
 
 let confirmedJob = "";
 
