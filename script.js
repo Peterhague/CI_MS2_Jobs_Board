@@ -995,16 +995,6 @@ let jobsDataThree = [
     }
 ]
 
-let bodyJobs = document.getElementById("body-jobs");
-
-let bodyIndex = document.getElementById("body-index");
-
-let para = document.createElement("p");
-
-para.innerHTML = "hello there";
-
-bodyJobs.appendChild(para);
-
 let jobs = Object.keys(jobsDataOne[0]);
 jobs.sort();
 
@@ -1183,49 +1173,45 @@ let divCV = document.getElementById("div-cv");
 let confirmedJob = "";
 
 function submissionOne() {
-skillsNarrative = document.getElementsByClassName("skill-items");
-let skillsSelection = document.getElementsByClassName("skill-boxes");
-let skillsSelectionItems = document.getElementsByClassName("box");
-let rows = document.getElementsByClassName("rows");
-confirmedJob = document.createElement("p");
-confirmedJob.innerHTML = selected;
-for (i of rows) {
-selection = i.lastElementChild.firstElementChild.children;
-if (selection[0].style.backgroundColor === "red") {
-  let confirmedSkills = document.createElement("p");
-  confirmedSkills.innerHTML = `${i.firstElementChild.textContent} - very strong`;
-  divCV.appendChild(confirmedSkills);
-  confirmedJobs.appendChild(confirmedJob);
-} else if (selection[1].style.backgroundColor === "red") {
-   let confirmedSkills = document.createElement("p");
-  confirmedSkills.innerHTML = `${i.firstElementChild.textContent} - strong`;
-  divCV.appendChild(confirmedSkills);
-  confirmedJobs.appendChild(confirmedJob);
-} else if (selection[2].style.backgroundColor === "red") {
-  let confirmedSkills = document.createElement("p");
-  confirmedSkills.innerHTML = `${i.firstElementChild.textContent} - good`;
-  divCV.appendChild(confirmedSkills);
-  confirmedJobs.appendChild(confirmedJob);
-} else if (selection[3].style.backgroundColor === "red") {
-  let confirmedSkills = document.createElement("p");
-  confirmedSkills.innerHTML = `${i.firstElementChild.textContent} - intermediate`;
-  divCV.appendChild(confirmedSkills);
-  confirmedJobs.appendChild(confirmedJob);
-} else if (selection[4].style.backgroundColor === "red") {
-  let confirmedSkills = document.createElement("p");
-  confirmedSkills.innerHTML = `${i.firstElementChild.textContent} - beginner`;
-  divCV.appendChild(confirmedSkills);
-  confirmedJobs.appendChild(confirmedJob);
+    skillsNarrative = document.getElementsByClassName("skill-items");
+    let skillsSelection = document.getElementsByClassName("skill-boxes");
+    let skillsSelectionItems = document.getElementsByClassName("box");
+    let rows = document.getElementsByClassName("rows");
+    confirmedJob = document.createElement("p");
+    confirmedJob.innerHTML = selected;
+    for (i of rows) {
+        selection = i.lastElementChild.firstElementChild.children;
+        if (selection[0].style.backgroundColor === "red") {
+        let confirmedSkills = document.createElement("p");
+        confirmedSkills.innerHTML = `${i.firstElementChild.textContent} - very strong`;
+        divCV.appendChild(confirmedSkills);
+        confirmedJobs.appendChild(confirmedJob);
+    } else if (selection[1].style.backgroundColor === "red") {
+        let confirmedSkills = document.createElement("p");
+        confirmedSkills.innerHTML = `${i.firstElementChild.textContent} - strong`;
+        divCV.appendChild(confirmedSkills);
+        confirmedJobs.appendChild(confirmedJob);
+    } else if (selection[2].style.backgroundColor === "red") {
+        let confirmedSkills = document.createElement("p");
+        confirmedSkills.innerHTML = `${i.firstElementChild.textContent} - good`;
+        divCV.appendChild(confirmedSkills);
+        confirmedJobs.appendChild(confirmedJob);
+    } else if (selection[3].style.backgroundColor === "red") {
+        let confirmedSkills = document.createElement("p");
+        confirmedSkills.innerHTML = `${i.firstElementChild.textContent} - intermediate`;
+        divCV.appendChild(confirmedSkills);
+        confirmedJobs.appendChild(confirmedJob);
+    } else if (selection[4].style.backgroundColor === "red") {
+        let confirmedSkills = document.createElement("p");
+        confirmedSkills.innerHTML = `${i.firstElementChild.textContent} - beginner`;
+        divCV.appendChild(confirmedSkills);
+        confirmedJobs.appendChild(confirmedJob);
+    }
+    }  
+    divOne.innerHTML = "";
+    divTwo.innerHTML = "";
+    divThree.innerHTML = "";
+    dropDownPlaceholder.innerHTML = "Select another job";
+    dropDown.value = dropDownPlaceholder.innerHTML;
 }
-}  
-divOne.innerHTML = "";
-divTwo.innerHTML = "";
-divThree.innerHTML = "";
-dropDownPlaceholder.innerHTML = "Select another job";
-dropDown.value = dropDownPlaceholder.innerHTML;
-}
-
-let testPara = document.createElement("p");
-testPara.innerHTML = "another one";
-bodyJobs.appendChild(testPara);
 

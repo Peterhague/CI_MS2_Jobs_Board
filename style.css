@@ -5,21 +5,20 @@
     display: inline-block;
   }
   
-  .rows {
-    display: flex;
-  }
-  
-  .skill-boxes {
-    display: inline;
-    flex: 1;
-  }
-  
-  .skill-items {
-    display: inline;
-    flex: 1;
-  }
-  
-  .audit-senior-accounting-role--boxes {
-    background-color: blue;
-  }
-  
+.rows {
+  display: flex;
+}
+
+.skill-boxes {
+  display: inline;
+  flex: 1;
+}
+
+.skill-items {
+  display: inline;
+  flex: 1;
+}
+
+.audit-senior-accounting-role--boxes {
+  background-color: blue;
+}
