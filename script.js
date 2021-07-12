@@ -994,20 +994,6 @@ let jobsDataThree = [
         "project accountant": "revenue recognition"
     }
 ]
-let ok = document.getElementById("ok");
-ok.innerHTML = "ok then";
-
-let testDiv = document.createElement("div");
-testDiv.innerHTML = "test div";
-let bodyJobs = document.getElementById("body-jobs");
-bodyJobs.appendChild(testDiv);
-
-
-let testground = document.createElement("div");
-testground.innerHTML = "here we go";
-bodyJobs.appendChild(testground);
-
-
 
 let jobs = Object.keys(jobsDataOne[0]);
 jobs.sort();
@@ -1064,6 +1050,16 @@ let skillsNarrative = "";
 let submitOne = "";
 let submitTwo = "";
 let submitThree = ""; 
+let selection = "";
+let divCV = document.getElementById("div-cv");
+let confirmedJob = "";
+let buttonPostCV = document.getElementById("button-post-cv");
+let firstName = document.getElementById("fname");
+let lastName = document.getElementById("lname");
+
+lastName.value = "fuck you";
+
+buttonPostCV.addEventListener("click", newCVPosted)
 
 function clear() {
 divOne.innerHTML = "";
@@ -1073,120 +1069,112 @@ divThree.innerHTML = "";
 
 
 function jobSelected() {
-dropDownPlaceholder.style.display = "none"; 
-for (i in jobsDataOne) {  
-selected = dropDown.value;
-selectedNoSpaces = selected.replace(/ /g, "-");
-skills = jobsDataOne[i][selected];
-skillsNoSpaces = skills.replace(/ /g, "-");
-divRow = document.createElement("div");
-divRow.classList.add("rows");
-skillItems = document.createElement("div");
-skillItems.innerHTML = skills;
-skillItems.classList.add(`${selectedNoSpaces}-${skillsNoSpaces}`);
-skillItems.classList.add("skill-items");
-skillBoxes = document.createElement("div");
-skillBoxes.innerHTML = boxes;
-divRow.appendChild(skillItems);
-divRow.appendChild(skillBoxes);
-divOne.appendChild(divRow);    
-}
-moreOne = document.createElement("button");
-submitOne = document.createElement("button");
-moreOne.innerHTML = "More";
-submitOne.innerHTML = "Submit";
-moreOne.addEventListener("click", moreSkillsOne);
-submitOne.addEventListener("click", submissionOne);
-divOne.appendChild(moreOne);
-divOne.appendChild(submitOne);
-for (boxItem of box) {
-boxItem.addEventListener("click", boxSelected);
-}
+    dropDownPlaceholder.style.display = "none"; 
+    for (i in jobsDataOne) {  
+        selected = dropDown.value;
+        selectedNoSpaces = selected.replace(/ /g, "-");
+        skills = jobsDataOne[i][selected];
+        skillsNoSpaces = skills.replace(/ /g, "-");
+        divRow = document.createElement("div");
+        divRow.classList.add("rows");
+        skillItems = document.createElement("div");
+        skillItems.innerHTML = skills;
+        skillItems.classList.add(`${selectedNoSpaces}-${skillsNoSpaces}`);
+        skillItems.classList.add("skill-items");
+        skillBoxes = document.createElement("div");
+        skillBoxes.innerHTML = boxes;
+        divRow.appendChild(skillItems);
+        divRow.appendChild(skillBoxes);
+        divOne.appendChild(divRow);    
+    }
+    moreOne = document.createElement("button");
+    submitOne = document.createElement("button");
+    moreOne.innerHTML = "More";
+    submitOne.innerHTML = "Submit";
+    moreOne.addEventListener("click", moreSkillsOne);
+    submitOne.addEventListener("click", submissionOne);
+    divOne.appendChild(moreOne);
+    divOne.appendChild(submitOne);
+    for (boxItem of box) {
+        boxItem.addEventListener("click", boxSelected);
+    }
 }  
 
 function boxSelected() {  
-let parent = this.parentNode;
-let all = parent.children;
-for (i of all) {
-if (this.style.backgroundColor === "red") {
-i.style.backgroundColor = "white";
-this.style.backgroundColor = "white";
-} else {
-i.style.backgroundColor = "white";  
-this.style.backgroundColor = "red";  
-}
-}
+    let parent = this.parentNode;
+    let all = parent.children;
+    for (i of all) {
+        if (this.style.backgroundColor === "red") {
+            i.style.backgroundColor = "white";
+            this.style.backgroundColor = "white";
+        } else {
+        i.style.backgroundColor = "white";  
+        this.style.backgroundColor = "red";  
+        }
+    }
 }
 
 function moreSkillsOne() {
-moreOne.remove();
-submitOne.remove();
-for (i in jobsDataTwo) {
-selected = dropDown.value;
-selectedNoSpaces = selected.replace(/ /g, "-");
-skills = jobsDataTwo[i][selected];
-skillsNoSpaces = skills.replace(/ /g, "-");
-divRow = document.createElement("div");
-divRow.classList.add("rows");
-skillItems = document.createElement("div");
-skillItems.innerHTML = skills;
-skillItems.classList.add(`${selectedNoSpaces}-${skillsNoSpaces}`);
-skillItems.classList.add("skill-items");
-skillBoxes = document.createElement("div");
-skillBoxes.innerHTML = boxes;
-divRow.appendChild(skillItems);
-divRow.appendChild(skillBoxes);
-divOne.appendChild(divRow);
-}
-moreTwo = document.createElement("button");
-submitTwo = document.createElement("button");
-moreTwo.innerHTML = "More";
-submitTwo.innerHTML = "Submit";
-moreTwo.addEventListener("click", moreSkillsTwo);
-submitTwo.addEventListener("click", submissionOne);
-divTwo.appendChild(moreTwo);
-divTwo.appendChild(submitTwo);
-for (boxItem of box) {
-boxItem.addEventListener("click", boxSelected);
-}
+    moreOne.remove();
+    submitOne.remove();
+    for (i in jobsDataTwo) {
+        selected = dropDown.value;
+        selectedNoSpaces = selected.replace(/ /g, "-");
+        skills = jobsDataTwo[i][selected];
+        skillsNoSpaces = skills.replace(/ /g, "-");
+        divRow = document.createElement("div");
+        divRow.classList.add("rows");
+        skillItems = document.createElement("div");
+        skillItems.innerHTML = skills;
+        skillItems.classList.add(`${selectedNoSpaces}-${skillsNoSpaces}`);
+        skillItems.classList.add("skill-items");
+        skillBoxes = document.createElement("div");
+        skillBoxes.innerHTML = boxes;
+        divRow.appendChild(skillItems);
+        divRow.appendChild(skillBoxes);
+        divOne.appendChild(divRow);
+    }
+    moreTwo = document.createElement("button");
+    submitTwo = document.createElement("button");
+    moreTwo.innerHTML = "More";
+    submitTwo.innerHTML = "Submit";
+    moreTwo.addEventListener("click", moreSkillsTwo);
+    submitTwo.addEventListener("click", submissionOne);
+    divTwo.appendChild(moreTwo);
+    divTwo.appendChild(submitTwo);
+    for (boxItem of box) {
+        boxItem.addEventListener("click", boxSelected);
+    }
 }
 
 function moreSkillsTwo() {
-moreTwo.remove();
-submitTwo.remove();
-for (i in jobsDataThree) {
-selected = dropDown.value;
-selectedNoSpaces = selected.replace(/ /g, "-");
-skills = jobsDataThree[i][selected];
-skillsNoSpaces = skills.replace(/ /g, "-");
-divRow = document.createElement("div");
-divRow.classList.add("rows");
-skillItems = document.createElement("div");
-skillItems.innerHTML = skills;
-skillItems.classList.add(`${selectedNoSpaces}-${skillsNoSpaces}`);
-skillItems.classList.add("skill-items");
-skillBoxes = document.createElement("div");
-skillBoxes.innerHTML = boxes;
-divRow.appendChild(skillItems);
-divRow.appendChild(skillBoxes);
-divOne.appendChild(divRow);
+    moreTwo.remove();
+    submitTwo.remove();
+    for (i in jobsDataThree) {
+        selected = dropDown.value;
+        selectedNoSpaces = selected.replace(/ /g, "-");
+        skills = jobsDataThree[i][selected];
+        skillsNoSpaces = skills.replace(/ /g, "-");
+        divRow = document.createElement("div");
+        divRow.classList.add("rows");
+        skillItems = document.createElement("div");
+        skillItems.innerHTML = skills;
+        skillItems.classList.add(`${selectedNoSpaces}-${skillsNoSpaces}`);
+        skillItems.classList.add("skill-items");
+        skillBoxes = document.createElement("div");
+        skillBoxes.innerHTML = boxes;
+        divRow.appendChild(skillItems);
+        divRow.appendChild(skillBoxes);
+        divOne.appendChild(divRow);
+    }
+    submitThree = document.createElement("button");
+    submitThree.innerHTML = "Submit";
+    submitThree.addEventListener("click", submissionOne);
+    divThree.appendChild(submitThree);
+    for (boxItem of box) {
+        boxItem.addEventListener("click", boxSelected);
+    }
 }
-submitThree = document.createElement("button");
-submitThree.innerHTML = "Submit";
-submitThree.addEventListener("click", submissionOne);
-divThree.appendChild(submitThree);
-for (boxItem of box) {
-boxItem.addEventListener("click", boxSelected);
-}
-}
-
-let selection = "";
-
-let divCV = document.getElementById("div-cv");
-
-divCV.innerHTML = "this is a div";
-
-let confirmedJob = "";
 
 function submissionOne() {
     skillsNarrative = document.getElementsByClassName("skill-items");
@@ -1231,3 +1219,6 @@ function submissionOne() {
     dropDown.value = dropDownPlaceholder.innerHTML;
 }
 
+function newCVPosted() {
+    this.innerHTML = "changed";
+}

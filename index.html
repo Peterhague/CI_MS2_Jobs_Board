@@ -8,13 +8,18 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body id="body-index">
-    <a href="jobs.html">Jobs</a>
+    <form>
+      <div><label for="fname">First Name</label><input id="fname" type="text" required></div> 
+      <div><label for="lname">Last Name</label><input id="lname" type="text" required></div>
+      <div><label for="email">Email Address</label><input id="email" type="email" required></div>
+    </form>
     <div id="confirmed-jobs"></div>
     <div id="dropdown"></div>
     <div id="div-one"></div>
     <div id="div-two"></div>
     <div id="div-three"></div>
-    <p id="ok">test paragraph</p>
+    <div id="div-submit-buttons"><button id="button-post-cv">Post CV</button></div>
+    <div id="div-cv"></div>
     <script src="script.js"></script>
   </body>
 </html>
