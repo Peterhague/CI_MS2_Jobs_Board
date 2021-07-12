@@ -1056,8 +1056,7 @@ let confirmedJob = "";
 let buttonPostCV = document.getElementById("button-post-cv");
 let firstName = document.getElementById("fname");
 let lastName = document.getElementById("lname");
-
-lastName.value = "fuck you";
+let genratedCVs = "";
 
 buttonPostCV.addEventListener("click", newCVPosted)
 
@@ -1220,5 +1219,18 @@ function submissionOne() {
 }
 
 function newCVPosted() {
-    this.innerHTML = "changed";
+    genratedCVs = document.createElement("div");
+    genratedCVs.classList.add("posted-cvs");
+    let nameGeneratedCVs = document.createElement("div");
+    let jobsGeneratedCVs = document.createElement("div");
+    let contentGeneratedCVs = document.createElement("div");
+    jobsGeneratedCVs.innerHTML = confirmedJobs.innerHTML;
+    contentGeneratedCVs.innerHTML = divCV.innerHTML;
+    nameGeneratedCVs.innerHTML = `${fname.value} ${lname.value}`;
+    genratedCVs.appendChild(nameGeneratedCVs);
+    genratedCVs.appendChild(jobsGeneratedCVs);
+    genratedCVs.appendChild(contentGeneratedCVs);
+    document.body.appendChild(genratedCVs);
+    confirmedJobs.innerHTML = "";
+    divCV.innerHTML = "";
 }

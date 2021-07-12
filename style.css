@@ -18,3 +18,8 @@
   display: inline;
   flex: 1;
 }
+
+.posted-cvs {
+  width: 50vw;
+  border: solid 2px;
+}
